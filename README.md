@@ -70,33 +70,33 @@ This project implements a **sophisticated multi-agent system** that leverages si
 ```mermaid
 graph TB
     subgraph "User Interfaces"
-        UI1["🖥️ Streamlit Web App|Interactive UI"]
-        UI2["⌨️ Command Line Interface|CLI Tool"]
+        UI1["🖥️ Streamlit Web App<br/>Interactive UI"]
+        UI2["⌨️ Command Line Interface<br/>CLI Tool"]
     end
     
     subgraph "Core System"
-        LG["🔧 LangGraph Orchestrator|Agent Coordination"]
-        SM["📊 State Manager|Shared Memory"]
+        LG["🔧 LangGraph Orchestrator<br/>Agent Coordination"]
+        SM["📊 State Manager<br/>Shared Memory"]
     end
     
     subgraph "AI Infrastructure"
-        GROQ["⚡ Groq API|Lightning Fast Inference"]
-        LLM["🧠 Llama 3.3 70B|Language Model"]
+        GROQ["⚡ Groq API<br/>Lightning Fast Inference"]
+        LLM["🧠 Llama 3.3 70B<br/>Language Model"]
     end
     
     subgraph "Multi-Agent System"
-        A1["🎭 Director|Creative Vision"]
-        A2["📝 Scene Planner|Narrative Structure"]
-        A3["👥 Character Developer|Character Profiles"]
-        A4["💬 Dialogue Writer|Scene Generation"]
-        A5["🔍 Continuity Editor|Quality Assurance"]
-        A6["📄 Formatter|Output Generation"]
+        A1["🎭 Director<br/>Creative Vision"]
+        A2["📝 Scene Planner<br/>Narrative Structure"]
+        A3["👥 Character Developer<br/>Character Profiles"]
+        A4["💬 Dialogue Writer<br/>Scene Generation"]
+        A5["🔍 Continuity Editor<br/>Quality Assurance"]
+        A6["📄 Formatter<br/>Output Generation"]
     end
     
     subgraph "Output Formats"
-        F1["📋 Fountain Format|Professional Standard"]
-        F2["📝 Markdown Format|Human Readable"]
-        F3["📦 ZIP Package|Both Formats"]
+        F1["📋 Fountain Format<br/>Professional Standard"]
+        F2["📝 Markdown Format<br/>Human Readable"]
+        F3["📦 ZIP Package<br/>Both Formats"]
     end
     
     UI1 --> LG
@@ -127,51 +127,51 @@ graph TB
     A6 --> F2
     A6 --> F3
     
-    style UI1 fill:#e1f5fe
-    style UI2 fill:#e1f5fe
-    style LG fill:#f3e5f5
-    style SM fill:#fff3e0
-    style GROQ fill:#e8f5e8
-    style LLM fill:#e8f5e8
-    style A1 fill:#fce4ec
-    style A2 fill:#fce4ec
-    style A3 fill:#fce4ec
-    style A4 fill:#fce4ec
-    style A5 fill:#fce4ec
-    style A6 fill:#fce4ec
-    style F1 fill:#f1f8e9
-    style F2 fill:#f1f8e9
-    style F3 fill:#f1f8e9
+    style UI1 fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style UI2 fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style LG fill:#f3e5f5,stroke:#4a148c,stroke-width:2px,color:#000
+    style SM fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style GROQ fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px,color:#000
+    style LLM fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px,color:#000
+    style A1 fill:#fce4ec,stroke:#880e4f,stroke-width:2px,color:#000
+    style A2 fill:#fce4ec,stroke:#880e4f,stroke-width:2px,color:#000
+    style A3 fill:#fce4ec,stroke:#880e4f,stroke-width:2px,color:#000
+    style A4 fill:#fce4ec,stroke:#880e4f,stroke-width:2px,color:#000
+    style A5 fill:#fce4ec,stroke:#880e4f,stroke-width:2px,color:#000
+    style A6 fill:#fce4ec,stroke:#880e4f,stroke-width:2px,color:#000
+    style F1 fill:#f1f8e9,stroke:#33691e,stroke-width:2px,color:#000
+    style F2 fill:#f1f8e9,stroke:#33691e,stroke-width:2px,color:#000
+    style F3 fill:#f1f8e9,stroke:#33691e,stroke-width:2px,color:#000
 ```
 
 ### **Agent Workflow Pipeline**
 
 ```mermaid
 flowchart TD
-    START(["🎬 User Input|Title, Logline, Genre"]) --> INIT["🚀 Initialize State|Setup Parameters"]
+    START(["🎬 User Input<br/>Title, Logline, Genre"]) --> INIT["🚀 Initialize State<br/>Setup Parameters"]
     
-    INIT --> D["🎭 Director Agent|Creative Vision & Story Beats"]
+    INIT --> D["🎭 Director Agent<br/>Creative Vision & Story Beats"]
     D --> D_CHECK{"✅ Success?"}
-    D_CHECK -->|Yes| SP["📝 Scene Planner Agent|Narrative Structure"]
+    D_CHECK -->|Yes| SP["📝 Scene Planner Agent<br/>Narrative Structure"]
     D_CHECK -->|No| ERROR1["❌ Fallback Response"]
     
     SP --> SP_CHECK{"✅ Success?"}
-    SP_CHECK -->|Yes| CD["👥 Character Developer|Character Profiles"]
+    SP_CHECK -->|Yes| CD["👥 Character Developer<br/>Character Profiles"]
     SP_CHECK -->|No| ERROR2["❌ Fallback Response"]
     
     CD --> CD_CHECK{"✅ Success?"}
-    CD_CHECK -->|Yes| DW["💬 Dialogue Writer|Scene Generation"]
+    CD_CHECK -->|Yes| DW["💬 Dialogue Writer<br/>Scene Generation"]
     CD_CHECK -->|No| ERROR3["❌ Fallback Response"]
     
     DW --> DW_CHECK{"✅ Success?"}
-    DW_CHECK -->|Yes| CE["🔍 Continuity Editor|Quality Review"]
+    DW_CHECK -->|Yes| CE["🔍 Continuity Editor<br/>Quality Review"]
     DW_CHECK -->|No| ERROR4["❌ Fallback Response"]
     
     CE --> CE_CHECK{"✅ Success?"}
-    CE_CHECK -->|Yes| FM["📄 Formatter Agent|Final Assembly"]
+    CE_CHECK -->|Yes| FM["📄 Formatter Agent<br/>Final Assembly"]
     CE_CHECK -->|No| ERROR5["❌ Use Draft Scenes"]
     
-    FM --> OUTPUT["📋 Generated Outputs|Fountain + Markdown"]
+    FM --> OUTPUT["📋 Generated Outputs<br/>Fountain + Markdown"]
     
     ERROR1 --> SP
     ERROR2 --> CD
@@ -179,10 +179,10 @@ flowchart TD
     ERROR4 --> CE
     ERROR5 --> FM
     
-    OUTPUT --> END(["✨ Complete Screenplay|Ready for Download"])
+    OUTPUT --> END(["✨ Complete Screenplay<br/>Ready for Download"])
     
     subgraph "State Management"
-        STATE[("📊 Shared State|JSON Dictionary")]
+        STATE[("📊 Shared State<br/>JSON Dictionary")]
     end
     
     D <--> STATE
@@ -192,21 +192,26 @@ flowchart TD
     CE <--> STATE
     FM <--> STATE
     
-    style START fill:#e8f5e8
-    style END fill:#e8f5e8
-    style D fill:#fce4ec
-    style SP fill:#e3f2fd
-    style CD fill:#f3e5f5
-    style DW fill:#fff3e0
-    style CE fill:#e0f2f1
-    style FM fill:#fafafa
-    style OUTPUT fill:#f1f8e9
-    style STATE fill:#fff8e1
-    style ERROR1 fill:#ffebee
-    style ERROR2 fill:#ffebee
-    style ERROR3 fill:#ffebee
-    style ERROR4 fill:#ffebee
-    style ERROR5 fill:#ffebee
+    style START fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000
+    style END fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000
+    style D fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#000
+    style SP fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style CD fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000
+    style DW fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#000
+    style CE fill:#e0f2f1,stroke:#388e3c,stroke-width:2px,color:#000
+    style FM fill:#fafafa,stroke:#424242,stroke-width:2px,color:#000
+    style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000
+    style STATE fill:#fff8e1,stroke:#fbc02d,stroke-width:3px,color:#000
+    style ERROR1 fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#000
+    style ERROR2 fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#000
+    style ERROR3 fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#000
+    style ERROR4 fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#000
+    style ERROR5 fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#000
+    style D_CHECK fill:#ffffff,stroke:#424242,stroke-width:2px,color:#000
+    style SP_CHECK fill:#ffffff,stroke:#424242,stroke-width:2px,color:#000
+    style CD_CHECK fill:#ffffff,stroke:#424242,stroke-width:2px,color:#000
+    style DW_CHECK fill:#ffffff,stroke:#424242,stroke-width:2px,color:#000
+    style CE_CHECK fill:#ffffff,stroke:#424242,stroke-width:2px,color:#000
 ```
 
 ### **Component Interaction Architecture**
@@ -225,12 +230,12 @@ graph TB
             AGENTS["🤖 Agent Layer"]
             
             subgraph "Specialized Agents"
-                AG1["Director"]
-                AG2["Scene Planner"]
-                AG3["Character Dev"]
-                AG4["Dialogue Writer"]
-                AG5["Continuity Editor"]
-                AG6["Formatter"]
+                AG1["🎭 Director"]
+                AG2["📝 Scene Planner"]
+                AG3["👥 Character Dev"]
+                AG4["💬 Dialogue Writer"]
+                AG5["🔍 Continuity Editor"]
+                AG6["📄 Formatter"]
             end
         end
     end
@@ -270,14 +275,21 @@ graph TB
     FILE_SERVICE --> STORAGE
     STATE_SERVICE --> STORAGE
     
-    style WEB fill:#e1f5fe,stroke:#01579b,stroke-width:2px
-    style CLI fill:#e1f5fe,stroke:#01579b,stroke-width:2px
-    style GRAPH fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    style LLM_SERVICE fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
-    style STATE_SERVICE fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    style FILE_SERVICE fill:#fce4ec,stroke:#880e4f,stroke-width:2px
-    style GROQ_API fill:#e0f2f1,stroke:#004d40,stroke-width:2px
-    style STORAGE fill:#f1f8e9,stroke:#33691e,stroke-width:2px
+    style WEB fill:#e1f5fe,stroke:#01579b,stroke-width:3px,color:#000
+    style CLI fill:#e1f5fe,stroke:#01579b,stroke-width:3px,color:#000
+    style GRAPH fill:#f3e5f5,stroke:#4a148c,stroke-width:3px,color:#000
+    style AGENTS fill:#f9f9f9,stroke:#616161,stroke-width:2px,color:#000
+    style LLM_SERVICE fill:#e8f5e8,stroke:#1b5e20,stroke-width:3px,color:#000
+    style STATE_SERVICE fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#000
+    style FILE_SERVICE fill:#fce4ec,stroke:#880e4f,stroke-width:3px,color:#000
+    style GROQ_API fill:#e0f2f1,stroke:#004d40,stroke-width:3px,color:#000
+    style STORAGE fill:#f1f8e9,stroke:#33691e,stroke-width:3px,color:#000
+    style AG1 fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
+    style AG2 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000
+    style AG3 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px,color:#000
+    style AG4 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#000
+    style AG5 fill:#e0f2f1,stroke:#2e7d32,stroke-width:2px,color:#000
+    style AG6 fill:#f5f5f5,stroke:#424242,stroke-width:2px,color:#000
 ```
 
 ### **Individual Agent Specifications**
