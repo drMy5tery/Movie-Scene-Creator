@@ -1,0 +1,36 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables (contains API keys)
+.env
+
+# Generated screenplay outputs
+outputs/
+
+# Virtual environments
+venv/
+env/
+.venv
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Streamlit cache
+.streamlit/
+
+# Temporary files
+*.tmp
+*.log
+
+# Backup files
+*.bak
+*.backup
