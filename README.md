@@ -142,6 +142,7 @@ graph TB
     style F1 fill:#f1f8e9
     style F2 fill:#f1f8e9
     style F3 fill:#f1f8e9
+```
 
 ### **Agent Workflow Pipeline**
 
