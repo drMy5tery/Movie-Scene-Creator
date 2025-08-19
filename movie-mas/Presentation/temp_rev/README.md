@@ -92,19 +92,72 @@ Reference these real outputs from your `outputs/` directory:
 
 ## 🎯 Q&A Preparation
 
-### **Likely Questions & Answers:**
+### **Fundamental MAS Concepts:**
+
+**Q: What makes this a true Multi-Agent System versus a simple pipeline?**
+A: Our system exhibits key MAS characteristics: autonomous agents with specialized goals, shared environment (blackboard), emergent behavior (collective screenplay quality exceeds individual agent capabilities), and dynamic interaction through state management. Each agent can make independent decisions within its domain.
+
+**Q: How do you ensure agent coordination without conflicts?**
+A: We use sequential coordination with explicit dependency management. Each agent validates its inputs and provides structured outputs. The shared state acts as a coordination mechanism, preventing race conditions while enabling information sharing.
+
+**Q: What type of agent architecture does your system implement?**
+A: We implement a layered agent architecture with reactive and deliberative components. Each agent has: sensors (input validation), reasoning (LLM processing), and actuators (state updates). The overall system follows a hybrid architecture combining reactive responses with deliberative planning.
+
+### **Technical Implementation:**
 
 **Q: How do agents communicate?**
-A: Through a shared state dictionary using JSON-structured data. Each agent reads from and writes to specific keys, creating a blackboard architecture pattern.
+A: Through a shared state dictionary using JSON-structured data. Each agent reads from and writes to specific keys, creating a blackboard architecture pattern with structured schemas for type safety.
 
 **Q: What happens if an agent fails?**
-A: The system uses graceful degradation - fallback responses allow the pipeline to continue even if individual agents fail, ensuring robust operation.
+A: The system uses graceful degradation - fallback responses allow the pipeline to continue even if individual agents fail. Each agent has error handling mechanisms and default outputs, ensuring robust operation through fault tolerance.
 
 **Q: Why this specific agent sequence?**
-A: The sequence mirrors the natural creative process: vision → structure → characters → content → polish → format. Each stage builds logically on the previous work.
+A: The sequence mirrors the natural creative process: vision → structure → characters → content → polish → format. Each stage builds logically on the previous work, creating dependencies that ensure coherent output generation.
 
 **Q: How is this different from a single large model?**
-A: Specialization allows each agent to focus on specific expertise, temperature tuning optimizes each task, and the multi-stage review improves quality through cognitive division of labor.
+A: Specialization allows each agent to focus on specific expertise, temperature tuning optimizes each task, and the multi-stage review improves quality through cognitive division of labor. We achieve better modularity, maintainability, and specialized optimization.
+
+### **Advanced Technical Questions:**
+
+**Q: How do you handle state consistency across agents?**
+A: We use immutable state passing with validation at each stage. Each agent receives a complete state copy, updates only its designated keys, and returns the modified state. JSON schema validation ensures data integrity throughout the pipeline.
+
+**Q: What's your approach to prompt engineering for different agents?**
+A: Each agent uses domain-specific system prompts with carefully crafted few-shot examples. We employ different temperature settings (0.4-0.8) based on the creative vs. analytical nature of each task. Structured output parsing ensures consistent JSON responses.
+
+**Q: How do you optimize LLM performance across multiple agents?**
+A: We use agent-specific temperature settings, model selection based on task complexity, and structured prompts with JSON schema enforcement. Groq's fast inference minimizes latency while maintaining quality through appropriate model selection.
+
+**Q: What happens with conflicting character voices between agents?**
+A: The Character Developer creates definitive profiles with voice guidelines, which the Dialogue Writer uses as constraints. The Continuity Editor then reviews for consistency, creating a three-stage validation process that maintains character voice integrity.
+
+### **Architectural & Design Questions:**
+
+**Q: Why choose sequential over parallel agent execution?**
+A: Sequential execution ensures proper dependency resolution - characters need scenes, dialogue needs characters, etc. While parallel execution could be faster, the creative dependencies in screenplay writing make sequential processing more reliable and coherent.
+
+**Q: How scalable is your agent architecture?**
+A: Highly scalable - agents are stateless and can be distributed across different services. The shared state pattern allows for horizontal scaling, and new agents can be added easily through the LangGraph workflow definition.
+
+**Q: What quality assurance mechanisms are built into the system?**
+A: Multi-layered QA: JSON schema validation, agent-specific output verification, inter-agent consistency checking (Continuity Editor), format compliance validation, and graceful degradation with fallback responses.
+
+**Q: How do you handle different genres and creative styles?**
+A: The Director agent adapts its approach based on genre input, character development varies by story type, and dialogue styles adjust automatically. The system's flexibility comes from parameterized prompts and genre-aware processing in each agent.
+
+### **Research & Innovation Questions:**
+
+**Q: What's novel about your MAS approach to creative content generation?**
+A: We demonstrate successful application of sequential coordination to creative tasks, achieve emergent intelligence through specialized collaboration, and maintain professional industry standards through AI agent cooperation. This bridges the gap between academic MAS research and practical creative applications.
+
+**Q: How does your system exhibit emergent behavior?**
+A: The final screenplay quality emerges from agent interactions - no single agent can produce a complete professional script, but their collaboration creates coherent, industry-standard output. The whole system exhibits intelligence beyond any individual component.
+
+**Q: What are the implications for human-AI collaboration in creative fields?**
+A: Our system shows AI can handle structured creative tasks while maintaining human oversight through input specification and output review. It augments human creativity rather than replacing it, enabling rapid prototyping and iteration in creative workflows.
+
+**Q: How could this approach extend to other creative domains?**
+A: The architectural principles apply to any structured creative process: novel writing (plot → chapters → characters → prose → editing), game development (mechanics → narrative → dialogue → balancing), marketing content (strategy → messaging → copy → optimization).
 
 ## 🚀 Live Demo Setup
 

@@ -78,19 +78,20 @@ Each agent represents a **domain expert**:
 ### **2. Communication Patterns**
 
 #### **Blackboard Architecture**
+
 ```mermaid
 graph TB
-    subgraph "Shared State (Blackboard)"
-        STATE[(📊 State Dictionary<br/>• title, logline, genre<br/>• beats → scenes → characters<br/>• draft_scenes → final_scenes<br/>• formatted_screenplay)]
+    subgraph "Shared State - Blackboard"
+        STATE[("📊 State Dictionary<br/>• title, logline, genre<br/>• beats → scenes → characters<br/>• draft_scenes → final_scenes<br/>• formatted_screenplay")]
     end
     
     subgraph "Agent Layer"
-        A1[🎭 Director]
-        A2[📝 Scene Planner]  
-        A3[👥 Character Dev]
-        A4[💬 Dialogue Writer]
-        A5[🔍 Continuity Editor]
-        A6[📄 Formatter]
+        A1["🎭 Director"]
+        A2["📝 Scene Planner"]  
+        A3["👥 Character Dev"]
+        A4["💬 Dialogue Writer"]
+        A5["🔍 Continuity Editor"]
+        A6["📄 Formatter"]
     end
     
     A1 <--> STATE
@@ -117,35 +118,34 @@ graph TB
 
 ```mermaid
 graph TB
-    subgraph "🖥️ User Interface Layer"
-        UI1[🌐 Streamlit Web App<br/>• Interactive Forms<br/>• Real-time Progress<br/>• Multiple Downloads]
-        UI2[⚡ Command Line Interface<br/>• Batch Processing<br/>• Scripting Support<br/>• Verbose Logging]
+    subgraph "User Interface Layer"
+        UI1["🌐 Streamlit Web App<br/>• Interactive Forms<br/>• Real-time Progress<br/>• Multiple Downloads"]
+        UI2["⚡ Command Line Interface<br/>• Batch Processing<br/>• Scripting Support<br/>• Verbose Logging"]
     end
     
-    subgraph "🔧 Orchestration Layer"
-        LG[🔗 LangGraph Coordinator<br/>• Workflow Management<br/>• Agent Sequencing<br/>• State Transitions]
-        SM[📊 State Manager<br/>• Shared Memory<br/>• Data Validation<br/>• Error Handling]
+    subgraph "Orchestration Layer"
+        LG["🔗 LangGraph Coordinator<br/>• Workflow Management<br/>• Agent Sequencing<br/>• State Transitions"]
+        SM["📊 State Manager<br/>• Shared Memory<br/>• Data Validation<br/>• Error Handling"]
     end
     
-    subgraph "🤖 Agent Layer"
-        direction TB
-        A1[🎭 Director<br/>Story Beats]
-        A2[📝 Scene Planner<br/>Scene Structure] 
-        A3[👥 Character Dev<br/>Personalities]
-        A4[💬 Dialogue Writer<br/>Scene Content]
-        A5[🔍 Continuity Editor<br/>Quality Polish]
-        A6[📄 Formatter<br/>Professional Output]
+    subgraph "Agent Layer"
+        A1["🎭 Director<br/>Story Beats"]
+        A2["📝 Scene Planner<br/>Scene Structure"] 
+        A3["👥 Character Dev<br/>Personalities"]
+        A4["💬 Dialogue Writer<br/>Scene Content"]
+        A5["🔍 Continuity Editor<br/>Quality Polish"]
+        A6["📄 Formatter<br/>Professional Output"]
     end
     
-    subgraph "⚡ AI Infrastructure"
-        GROQ[🚀 Groq API<br/>• Fast Inference<br/>• 15+ Models<br/>• Temperature Control]
-        LLM[🧠 Llama 3.3 70B<br/>• 131K Context<br/>• Production Ready<br/>• Creative Excellence]
+    subgraph "AI Infrastructure"
+        GROQ["🚀 Groq API<br/>• Fast Inference<br/>• 15+ Models<br/>• Temperature Control"]
+        LLM["🧠 Llama 3.3 70B<br/>• 131K Context<br/>• Production Ready<br/>• Creative Excellence"]
     end
     
-    subgraph "📁 Output Layer"  
-        F1[📋 Fountain Format<br/>• Industry Standard<br/>• Final Draft Compatible<br/>• Version Control Ready]
-        F2[📝 Markdown Format<br/>• Human Readable<br/>• Character Profiles<br/>• Project Overview]
-        F3[📦 ZIP Package<br/>• Both Formats<br/>• Instant Download<br/>• No Server Storage]
+    subgraph "Output Layer"  
+        F1["📋 Fountain Format<br/>• Industry Standard<br/>• Final Draft Compatible<br/>• Version Control Ready"]
+        F2["📝 Markdown Format<br/>• Human Readable<br/>• Character Profiles<br/>• Project Overview"]
+        F3["📦 ZIP Package<br/>• Both Formats<br/>• Instant Download<br/>• No Server Storage"]
     end
     
     UI1 --> LG
@@ -197,41 +197,42 @@ graph TB
 
 ```mermaid
 flowchart TD
-    START([🎬 User Input<br/>Title, Logline, Genre]) --> INIT[🚀 Initialize State<br/>Setup Parameters & Validation]
+    START(["🎬 User Input<br/>Title, Logline, Genre"]) --> INIT["🚀 Initialize State<br/>Setup Parameters & Validation"]
     
-    INIT --> D[🎭 Director Agent<br/>• Analyze story concept<br/>• Generate narrative beats<br/>• Set creative direction]
-    D --> D_CHECK{✅ Beats Generated<br/>Successfully?}
-    D_CHECK -->|✅ Yes| SP[📝 Scene Planner Agent<br/>• Convert beats to scenes<br/>• Define scene structure<br/>• Set locations & conflicts]
-    D_CHECK -->|❌ No| D_ERROR[⚠️ Use Default Beats<br/>Continue with fallback]
+    INIT --> D["🎭 Director Agent<br/>• Analyze story concept<br/>• Generate narrative beats<br/>• Set creative direction"]
+    D --> D_CHECK{"✅ Beats Generated<br/>Successfully?"}
+    D_CHECK -->|✅ Yes| SP["📝 Scene Planner Agent<br/>• Convert beats to scenes<br/>• Define scene structure<br/>• Set locations & conflicts"]
+    D_CHECK -->|❌ No| D_ERROR["⚠️ Use Default Beats<br/>Continue with fallback"]
     
-    SP --> SP_CHECK{✅ Scenes Structured<br/>Successfully?}
-    SP_CHECK -->|✅ Yes| CD[👥 Character Developer<br/>• Analyze scene requirements<br/>• Create character profiles<br/>• Define unique voices]
-    SP_CHECK -->|❌ No| SP_ERROR[⚠️ Use Generic Scenes<br/>Continue with fallback]
+    SP --> SP_CHECK{"✅ Scenes Structured<br/>Successfully?"}
+    SP_CHECK -->|✅ Yes| CD["👥 Character Developer<br/>• Analyze scene requirements<br/>• Create character profiles<br/>• Define unique voices"]
+    SP_CHECK -->|❌ No| SP_ERROR["⚠️ Use Generic Scenes<br/>Continue with fallback"]
     
-    CD --> CD_CHECK{✅ Characters Created<br/>Successfully?}
-    CD_CHECK -->|✅ Yes| DW[💬 Dialogue Writer<br/>• Write complete scenes<br/>• Generate authentic dialogue<br/>• Apply character voices]
-    CD_CHECK -->|❌ No| CD_ERROR[⚠️ Use Generic Characters<br/>Continue with fallback]
+    CD --> CD_CHECK{"✅ Characters Created<br/>Successfully?"}
+    CD_CHECK -->|✅ Yes| DW["💬 Dialogue Writer<br/>• Write complete scenes<br/>• Generate authentic dialogue<br/>• Apply character voices"]
+    CD_CHECK -->|❌ No| CD_ERROR["⚠️ Use Generic Characters<br/>Continue with fallback"]
     
-    DW --> DW_CHECK{✅ Scenes Written<br/>Successfully?}
-    DW_CHECK -->|✅ Yes| CE[🔍 Continuity Editor<br/>• Review scene consistency<br/>• Polish dialogue quality<br/>• Fix formatting issues]
-    DW_CHECK -->|❌ No| DW_ERROR[⚠️ Use Basic Scenes<br/>Continue with fallback]
+    DW --> DW_CHECK{"✅ Scenes Written<br/>Successfully?"}
+    DW_CHECK -->|✅ Yes| CE["🔍 Continuity Editor<br/>• Review scene consistency<br/>• Polish dialogue quality<br/>• Fix formatting issues"]
+    DW_CHECK -->|❌ No| DW_ERROR["⚠️ Use Basic Scenes<br/>Continue with fallback"]
     
-    CE --> CE_CHECK{✅ Scenes Polished<br/>Successfully?}
-    CE_CHECK -->|✅ Yes| FM[📄 Formatter Agent<br/>• Assemble final screenplay<br/>• Generate Fountain format<br/>• Create Markdown version]
-    CE_CHECK -->|❌ No| CE_ERROR[⚠️ Use Draft Scenes<br/>Skip polish step]
+    CE --> CE_CHECK{"✅ Scenes Polished<br/>Successfully?"}
+    CE_CHECK -->|✅ Yes| FM["📄 Formatter Agent<br/>• Assemble final screenplay<br/>• Generate Fountain format<br/>• Create Markdown version"]
+    CE_CHECK -->|❌ No| CE_ERROR["⚠️ Use Draft Scenes<br/>Skip polish step"]
     
-    FM --> OUTPUT[📋 Generated Outputs<br/>• Fountain (.fountain)<br/>• Markdown (.md)<br/>• ZIP package]
+    FM --> OUTPUT["📋 Generated Outputs<br/>• Fountain (.fountain)<br/>• Markdown (.md)<br/>• ZIP package"]
     
+    %% Fixed fallback flow - errors continue pipeline
     D_ERROR --> SP
     SP_ERROR --> CD
     CD_ERROR --> DW
     DW_ERROR --> CE
     CE_ERROR --> FM
     
-    OUTPUT --> END([✨ Complete Screenplay<br/>Ready for Professional Use])
+    OUTPUT --> END(["✨ Complete Screenplay<br/>Ready for Professional Use"])
     
-    subgraph "📊 State Management System"
-        STATE[(Shared State Dictionary<br/>• Input parameters<br/>• Progressive outputs<br/>• Error handling<br/>• Final results)]
+    subgraph "State Management System"
+        STATE[("Shared State Dictionary<br/>• Input parameters<br/>• Progressive outputs<br/>• Error handling<br/>• Final results")]
     end
     
     D <--> STATE
@@ -243,6 +244,7 @@ flowchart TD
     
     style START fill:#e8f5e8,stroke:#2e7d32,stroke-width:4px
     style END fill:#e8f5e8,stroke:#2e7d32,stroke-width:4px
+    style INIT fill:#e3f2fd,stroke:#1976d2,stroke-width:3px
     style D fill:#fce4ec,stroke:#ad1457,stroke-width:3px
     style SP fill:#e3f2fd,stroke:#1565c0,stroke-width:3px
     style CD fill:#f3e5f5,stroke:#6a1b9a,stroke-width:3px
