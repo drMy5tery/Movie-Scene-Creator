@@ -142,7 +142,7 @@ graph TB
         LLM["Llama 3.3 70B<br/>131K Context<br/>Production Ready<br/>Creative Excellence"]
     end
     
-    subgraph OUT ["Output Layer"]  
+    subgraph OUT ["Output Layer"]
         F1["Fountain Format<br/>Industry Standard<br/>Final Draft Compatible<br/>Version Control Ready"]
         F2["Markdown Format<br/>Human Readable<br/>Character Profiles<br/>Project Overview"]
         F3["ZIP Package<br/>Both Formats<br/>Instant Download<br/>No Server Storage"]
@@ -242,27 +242,27 @@ flowchart TD
     CE <--> STATE
     FM <--> STATE
     
-    style START fill:#e8f5e8,stroke:#2e7d32,stroke-width:4px
-    style END fill:#e8f5e8,stroke:#2e7d32,stroke-width:4px
-    style INIT fill:#e3f2fd,stroke:#1976d2,stroke-width:3px
-    style D fill:#fce4ec,stroke:#ad1457,stroke-width:3px
-    style SP fill:#e3f2fd,stroke:#1565c0,stroke-width:3px
-    style CD fill:#f3e5f5,stroke:#6a1b9a,stroke-width:3px
-    style DW fill:#fff3e0,stroke:#ef6c00,stroke-width:3px
-    style CE fill:#e0f2f1,stroke:#2e7d32,stroke-width:3px
-    style FM fill:#f5f5f5,stroke:#424242,stroke-width:3px
-    style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:3px
-    style STATE fill:#fff8e1,stroke:#f57c00,stroke-width:4px
-    style D_ERROR fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px
-    style SP_ERROR fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px
-    style CD_ERROR fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px
-    style DW_ERROR fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px
-    style CE_ERROR fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px
-    style D_CHECK fill:#ffffff,stroke:#616161,stroke-width:2px
-    style SP_CHECK fill:#ffffff,stroke:#616161,stroke-width:2px
-    style CD_CHECK fill:#ffffff,stroke:#616161,stroke-width:2px
-    style DW_CHECK fill:#ffffff,stroke:#616161,stroke-width:2px
-    style CE_CHECK fill:#ffffff,stroke:#616161,stroke-width:2px
+    style START fill:#e8f5e8,stroke:#2e7d32,stroke-width:4px,color:#000000
+    style END fill:#e8f5e8,stroke:#2e7d32,stroke-width:4px,color:#000000
+    style INIT fill:#e3f2fd,stroke:#1976d2,stroke-width:3px,color:#000000
+    style D fill:#fce4ec,stroke:#ad1457,stroke-width:3px,color:#000000
+    style SP fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#000000
+    style CD fill:#f3e5f5,stroke:#6a1b9a,stroke-width:3px,color:#000000
+    style DW fill:#fff3e0,stroke:#ef6c00,stroke-width:3px,color:#000000
+    style CE fill:#e0f2f1,stroke:#2e7d32,stroke-width:3px,color:#000000
+    style FM fill:#f5f5f5,stroke:#424242,stroke-width:3px,color:#000000
+    style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:3px,color:#000000
+    style STATE fill:#fff8e1,stroke:#f57c00,stroke-width:4px,color:#000000
+    style D_ERROR fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px,color:#000000
+    style SP_ERROR fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px,color:#000000
+    style CD_ERROR fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px,color:#000000
+    style DW_ERROR fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px,color:#000000
+    style CE_ERROR fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px,color:#000000
+    style D_CHECK fill:#ffffff,stroke:#616161,stroke-width:2px,color:#000000
+    style SP_CHECK fill:#ffffff,stroke:#616161,stroke-width:2px,color:#000000
+    style CD_CHECK fill:#ffffff,stroke:#616161,stroke-width:2px,color:#000000
+    style DW_CHECK fill:#ffffff,stroke:#616161,stroke-width:2px,color:#000000
+    style CE_CHECK fill:#ffffff,stroke:#616161,stroke-width:2px,color:#000000
 ```
 
 ---
@@ -287,10 +287,10 @@ graph TB
         PROCESS <--> LLM
         PROCESS --> OUTPUT
         
-        style INPUT fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
-        style PROCESS fill:#fce4ec,stroke:#ad1457,stroke-width:3px
-        style LLM fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-        style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px
+        style INPUT fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000000
+        style PROCESS fill:#fce4ec,stroke:#ad1457,stroke-width:3px,color:#000000
+        style LLM fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000000
+        style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000000
     end
 ```
 
@@ -332,10 +332,10 @@ graph TB
         PROCESS <--> LLM
         PROCESS --> OUTPUT
         
-        style INPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px
-        style PROCESS fill:#e3f2fd,stroke:#1565c0,stroke-width:3px
-        style LLM fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-        style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px
+        style INPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000000
+        style PROCESS fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#000000
+        style LLM fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000000
+        style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000000
     end
 ```
 
@@ -361,10 +361,10 @@ graph TB
         PROCESS <--> LLM
         PROCESS --> OUTPUT
         
-        style INPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px
-        style PROCESS fill:#f3e5f5,stroke:#6a1b9a,stroke-width:3px
-        style LLM fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-        style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px
+        style INPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000000
+        style PROCESS fill:#f3e5f5,stroke:#6a1b9a,stroke-width:3px,color:#000000
+        style LLM fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000000
+        style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000000
     end
 ```
 
@@ -390,10 +390,10 @@ graph TB
         PROCESS <--> LLM
         PROCESS --> OUTPUT
         
-        style INPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px
-        style PROCESS fill:#fff3e0,stroke:#ef6c00,stroke-width:3px
-        style LLM fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-        style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px
+        style INPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000000
+        style PROCESS fill:#fff3e0,stroke:#ef6c00,stroke-width:3px,color:#000000
+        style LLM fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000000
+        style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000000
     end
 ```
 
@@ -419,10 +419,10 @@ graph TB
         PROCESS <--> LLM
         PROCESS --> OUTPUT
         
-        style INPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px
-        style PROCESS fill:#e0f2f1,stroke:#2e7d32,stroke-width:3px
-        style LLM fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-        style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px
+        style INPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000000
+        style PROCESS fill:#e0f2f1,stroke:#2e7d32,stroke-width:3px,color:#000000
+        style LLM fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000000
+        style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000000
     end
 ```
 
@@ -448,10 +448,10 @@ graph TB
         PROCESS --> FORMAT
         FORMAT --> OUTPUT
         
-        style INPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px
-        style PROCESS fill:#f5f5f5,stroke:#424242,stroke-width:3px
-        style FORMAT fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
-        style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px
+        style INPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000000
+        style PROCESS fill:#f5f5f5,stroke:#424242,stroke-width:3px,color:#000000
+        style FORMAT fill:#e1f5fe,stroke:#0277bd,stroke-width:2px,color:#000000
+        style OUTPUT fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000000
     end
 ```
 
@@ -735,18 +735,18 @@ graph TB
         UI --> O3
         UI --> O4
         
-        style UI fill:#e1f5fe,stroke:#0277bd,stroke-width:3px
-        style F1 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-        style F2 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-        style F3 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-        style F4 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-        style P1 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
-        style P2 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
-        style P3 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
-        style O1 fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-        style O2 fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-        style O3 fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-        style O4 fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+        style UI fill:#e1f5fe,stroke:#0277bd,stroke-width:3px,color:#000000
+        style F1 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000000
+        style F2 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000000
+        style F3 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000000
+        style F4 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000000
+        style P1 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#000000
+        style P2 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#000000
+        style P3 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#000000
+        style O1 fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000000
+        style O2 fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000000
+        style O3 fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000000
+        style O4 fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000000
     end
 ```
 
@@ -817,11 +817,11 @@ graph TB
         
         A5[🌍 Localization Agent<br/>• Multi-language adaptation<br/>• Cultural contextualization<br/>• Regional compliance]
         
-        style A1 fill:#fce4ec,stroke:#ad1457,stroke-width:2px
-        style A2 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
-        style A3 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
-        style A4 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
-        style A5 fill:#e0f2f1,stroke:#2e7d32,stroke-width:2px
+        style A1 fill:#fce4ec,stroke:#ad1457,stroke-width:2px,color:#000000
+        style A2 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000000
+        style A3 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px,color:#000000
+        style A4 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#000000
+        style A5 fill:#e0f2f1,stroke:#2e7d32,stroke-width:2px,color:#000000
     end
 ```
 
