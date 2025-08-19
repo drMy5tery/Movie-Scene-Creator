@@ -101,13 +101,13 @@ graph TB
     A5 <--> STATE
     A6 <--> STATE
     
-    style STATE fill:#fff8e1,stroke:#f57c00,stroke-width:4px
-    style A1 fill:#fce4ec,stroke:#880e4f,stroke-width:2px
-    style A2 fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
-    style A3 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    style A4 fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-    style A5 fill:#e0f2f1,stroke:#388e3c,stroke-width:2px
-    style A6 fill:#fafafa,stroke:#424242,stroke-width:2px
+    style STATE fill:#fff8e1,stroke:#f57c00,stroke-width:4px,color:#000000
+    style A1 fill:#fce4ec,stroke:#880e4f,stroke-width:2px,color:#000000
+    style A2 fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000000
+    style A3 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000000
+    style A4 fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#000000
+    style A5 fill:#e0f2f1,stroke:#388e3c,stroke-width:2px,color:#000000
+    style A6 fill:#fafafa,stroke:#424242,stroke-width:2px,color:#000000
 ```
 
 ---
@@ -176,21 +176,21 @@ graph TB
     A6 --> F2  
     A6 --> F3
     
-    style UI1 fill:#e1f5fe,stroke:#0277bd,stroke-width:3px
-    style UI2 fill:#e1f5fe,stroke:#0277bd,stroke-width:3px
-    style LG fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
-    style SM fill:#fff3e0,stroke:#f57c00,stroke-width:3px
-    style GROQ fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px
-    style LLM fill:#e8f5e8,stroke:#1b5e20,stroke-width:3px
-    style A1 fill:#fce4ec,stroke:#ad1457,stroke-width:2px
-    style A2 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
-    style A3 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
-    style A4 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
-    style A5 fill:#e0f2f1,stroke:#2e7d32,stroke-width:2px
-    style A6 fill:#f5f5f5,stroke:#424242,stroke-width:2px
-    style F1 fill:#f1f8e9,stroke:#558b2f,stroke-width:2px
-    style F2 fill:#f1f8e9,stroke:#689f38,stroke-width:2px
-    style F3 fill:#f1f8e9,stroke:#7cb342,stroke-width:2px
+    style UI1 fill:#e1f5fe,stroke:#0277bd,stroke-width:3px,color:#000000
+    style UI2 fill:#e1f5fe,stroke:#0277bd,stroke-width:3px,color:#000000
+    style LG fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px,color:#000000
+    style SM fill:#fff3e0,stroke:#f57c00,stroke-width:3px,color:#000000
+    style GROQ fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000000
+    style LLM fill:#e8f5e8,stroke:#1b5e20,stroke-width:3px,color:#000000
+    style A1 fill:#fce4ec,stroke:#ad1457,stroke-width:2px,color:#000000
+    style A2 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000000
+    style A3 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px,color:#000000
+    style A4 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#000000
+    style A5 fill:#e0f2f1,stroke:#2e7d32,stroke-width:2px,color:#000000
+    style A6 fill:#f5f5f5,stroke:#424242,stroke-width:2px,color:#000000
+    style F1 fill:#f1f8e9,stroke:#558b2f,stroke-width:2px,color:#000000
+    style F2 fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000000
+    style F3 fill:#f1f8e9,stroke:#7cb342,stroke-width:2px,color:#000000
 ```
 
 ### **Agent Workflow Pipeline** *(Corrected Flow)*
