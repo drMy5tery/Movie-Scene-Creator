@@ -17,30 +17,7 @@
 
 ---
 
-## 📋 Academic Project Overview
 
-<table>
-<tr>
-<td><strong>Course</strong></td>
-<td>MSc AI/ML - Multi-Agent Systems (MAS)</td>
-</tr>
-<tr>
-<td><strong>Project Type</strong></td>
-<td>Advanced Multi-Agent Collaboration System</td>
-</tr>
-<tr>
-<td><strong>Objective</strong></td>
-<td>Demonstrate sophisticated agent coordination for creative content generation</td>
-</tr>
-<tr>
-<td><strong>Key Technologies</strong></td>
-<td>LangGraph, Groq API, LangChain, Streamlit, Python 3.11+</td>
-</tr>
-<tr>
-<td><strong>Industry Standards</strong></td>
-<td>Fountain Format, Professional Screenplay Formatting</td>
-</tr>
-</table>
 
 ## Project Summary
 
