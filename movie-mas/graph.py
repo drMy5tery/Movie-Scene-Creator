@@ -2,6 +2,7 @@
 Movie Scene Creator Multi-Agent System using LangGraph
 """
 import os
+import time
 from typing import Dict, Any
 from dotenv import load_dotenv
 from langgraph.graph import StateGraph, END
@@ -12,6 +13,75 @@ from agents import director, scene_planner, character_dev, dialogue_writer, cont
 
 # Load environment variables
 load_dotenv()
+
+
+# Timing wrapper functions for real-time measurement
+def timed_agent_wrapper(agent_name: str, agent_func):
+    """
+    Wrapper function to measure actual execution time of each agent.
+    """
+    def wrapper(state: Dict[str, Any]) -> Dict[str, Any]:
+        # Initialize timing data in state if not present
+        if 'agent_execution_times' not in state:
+            state['agent_execution_times'] = {}
+        if 'pipeline_start_time' not in state:
+            state['pipeline_start_time'] = time.time()
+        
+        # Record start time for this agent
+        agent_start_time = time.time()
+        print(f"⏱️  Starting {agent_name} at {time.strftime('%H:%M:%S', time.localtime(agent_start_time))}...")
+        
+        # Execute the actual agent function
+        result = agent_func(state)
+        
+        # Record end time and calculate duration
+        agent_end_time = time.time()
+        execution_time = agent_end_time - agent_start_time
+        
+        # Store timing information in the result state
+        if isinstance(result, dict):
+            if 'agent_execution_times' not in result:
+                result['agent_execution_times'] = state.get('agent_execution_times', {})
+            if 'pipeline_start_time' not in result:
+                result['pipeline_start_time'] = state.get('pipeline_start_time', agent_start_time)
+            
+            # Record this agent's execution time
+            result['agent_execution_times'][agent_name] = round(execution_time, 3)
+            
+            print(f"✅ {agent_name} completed in {execution_time:.3f} seconds")
+        
+        return result
+    
+    return wrapper
+
+
+def calculate_total_execution_time(state: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Calculate and store total pipeline execution time.
+    """
+    if 'pipeline_start_time' in state and 'agent_execution_times' in state:
+        pipeline_end_time = time.time()
+        total_time = pipeline_end_time - state['pipeline_start_time']
+        
+        # Store total execution time
+        state['total_execution_time'] = round(total_time, 3)
+        state['pipeline_end_time'] = pipeline_end_time
+        
+        # Calculate and verify sum of individual agent times
+        sum_agent_times = sum(state['agent_execution_times'].values())
+        
+        print(f"\n⏱️  TIMING SUMMARY:")
+        print(f"   Total Pipeline Time: {total_time:.3f} seconds")
+        print(f"   Sum of Agent Times: {sum_agent_times:.3f} seconds")
+        print(f"   Overhead Time: {(total_time - sum_agent_times):.3f} seconds")
+        
+        # Individual agent breakdown
+        print(f"\n📊 AGENT EXECUTION BREAKDOWN:")
+        for agent, exec_time in state['agent_execution_times'].items():
+            percentage = (exec_time / total_time) * 100 if total_time > 0 else 0
+            print(f"   {agent}: {exec_time:.3f}s ({percentage:.1f}%)")
+    
+    return state
 
 
 def create_movie_graph() -> StateGraph:
@@ -53,13 +123,13 @@ def create_movie_graph() -> StateGraph:
     # Create the StateGraph
     workflow = StateGraph(dict)
     
-    # Add all agent nodes with their new roles
-    workflow.add_node("director", director.run)  # Creates story beats
-    workflow.add_node("scene_planner", scene_planner.run)  # Converts beats to scenes
-    workflow.add_node("character_dev", character_dev.run)  # Creates character profiles
-    workflow.add_node("dialogue_writer", dialogue_writer.run)  # Writes draft scenes
-    workflow.add_node("continuity_editor", continuity_editor.run)  # Polishes final scenes
-    workflow.add_node("formatter", formatter.run)  # Formats to Fountain
+    # Add all agent nodes with their new roles, wrapped with timing measurement
+    workflow.add_node("director", timed_agent_wrapper("director", director.run))  # Creates story beats
+    workflow.add_node("scene_planner", timed_agent_wrapper("scene_planner", scene_planner.run))  # Converts beats to scenes
+    workflow.add_node("character_dev", timed_agent_wrapper("character_dev", character_dev.run))  # Creates character profiles
+    workflow.add_node("dialogue_writer", timed_agent_wrapper("dialogue_writer", dialogue_writer.run))  # Writes draft scenes
+    workflow.add_node("continuity_editor", timed_agent_wrapper("continuity_editor", continuity_editor.run))  # Polishes final scenes
+    workflow.add_node("formatter", timed_agent_wrapper("formatter", formatter.run))  # Formats to Fountain
     
     # Define the sequential workflow
     workflow.set_entry_point("director")
@@ -126,6 +196,9 @@ def run_movie_creation(
     try:
         # Execute the workflow
         final_state = app.invoke(initial_state)
+        
+        # Calculate and display total execution time
+        final_state = calculate_total_execution_time(final_state)
         
         print("✅ Movie creation pipeline completed successfully!")
         return final_state
